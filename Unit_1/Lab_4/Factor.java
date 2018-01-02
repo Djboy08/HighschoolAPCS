@@ -1,3 +1,4 @@
+package Unit_1.Lab_4;
 public class Factor{
    
     public static void factorLoop(int range){

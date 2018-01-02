@@ -1,5 +1,5 @@
+package Unit_4.Lab_2;
 import java.util.*;
-
 public class TextLab05{
     static int num = 1;
     static int den = 1;

@@ -1,3 +1,4 @@
+package Unit_5.Lab_2;
 public class Graduate extends Student {
     private int gradID;
     

@@ -1,3 +1,4 @@
+package Unit_5.Lab_3;
 import java.util.*;
 public class Mode {
     public static int mode(int[] array){

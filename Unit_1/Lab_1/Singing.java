@@ -1,3 +1,4 @@
+package Unit_1.Lab_1;
 public class Singing {
 
     public static void firstVerse() {

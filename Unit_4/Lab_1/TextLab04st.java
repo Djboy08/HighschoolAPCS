@@ -1,4 +1,4 @@
-
+package Unit_4.Lab_1;
 import java.util.*;
 
 public class TextLab04st{
@@ -50,7 +50,7 @@ class Rational {
     public void displayData(){
         System.out.println();
         System.out.println(getRational() + " equals " + getDecimal());
-        System.out.println();    
+        System.out.println();
     }
     private int getGCF(int n1,int n2){
         int rem = 0;

@@ -1,3 +1,4 @@
+package Unit_5.Lab_2;
 public class Client {
     public static void main(String args[]){
         int[] ar = {70,70,90,100,20,60};

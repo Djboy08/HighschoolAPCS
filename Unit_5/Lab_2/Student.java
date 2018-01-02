@@ -1,3 +1,4 @@
+package Unit_5.Lab_2;
 public class Student{
     private String name,grade;
     private int[] tests;
