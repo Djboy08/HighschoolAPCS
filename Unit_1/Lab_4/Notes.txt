@@ -1,0 +1,11 @@
+For tihs lab I had to produce a way to print out the 
+factorial of a number. For this I created one method with a paramater
+that I would pass in for the number i want to be factored.
+In the method I created a variable and assigned it as the value of the number I passed through
+on the loop I made the loops variable called i and assigned it to equal to the number passed in subtracted by 1
+I did this subtraction because as we increment through the numbers I want to use the 
+variable I set earlyer to multiply itself by i then setting the new value as the variables value.
+So i did the subtraction of one so I did not have the same two numbers multiplying by each other.
+so If i passed in the number 5, on the first iteration it would do 5x4 not 5x5
+once the loop is done I print out the variable I set that would print of the factor of the number.
+

@@ -1,0 +1,12 @@
+In this lab I created a method for each loop. 
+Each loop I have a commented in the start, stop and increment.
+I also wrote down the sample output for the loop.
+for each loop as the start i declared as the variable i.
+This i variable i declare as the start for each method.
+The second part of the loop where I use the expression I set
+i<= to the stop of the loop thats given.
+The last part of the loop is what I would be incrementing by.
+so if i was going up by 5s I would be i+=5, going down by 5
+would be i-=5. 
+
+For each of them I print i plus a space for the next character
