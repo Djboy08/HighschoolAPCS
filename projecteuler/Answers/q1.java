@@ -1,3 +1,4 @@
+package projecteuler.Answers;
 public class q1{
     public static void main(String[] args){
         int MAX_NUM = 1000;

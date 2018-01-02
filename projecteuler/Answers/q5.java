@@ -1,3 +1,4 @@
+package projecteuler.Answers;
 public class q5{
     public static void main(String[] args){
         int num = 1;

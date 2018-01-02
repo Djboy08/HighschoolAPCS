@@ -1,3 +1,4 @@
+package projecteuler.Answers;
 public class q6{
     public static void main(String[] args){
         int squares = 0;
