@@ -2,7 +2,6 @@ package projecteuler.Answers;
 import java.util.*;
 public class q7{
     public static void main(String[] args){
-        double MAX_NUM = Double.MAX_VALUE;
         ArrayList<Double> list = new ArrayList<Double>();
         int i =0;
         while(list.size() < 10002){
