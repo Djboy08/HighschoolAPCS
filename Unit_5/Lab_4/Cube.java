@@ -1,14 +1,20 @@
 package Unit_5.Lab_4;
 
-public class Cube implements Shape {
-    private double size;
+public class Cube extends Rectangle implements Shape {
+    public Cube(){
+        this(2);
+    }
     public Cube(double size){
-        this.size = size;
+        setString("Cube");
+        this.l = size;
     }
     public double volume(){
-        return Math.pow(this.size,3);
+        return Math.pow(this.l,3);
     }
     public double surfaceArea(){
-        return 6*(Math.pow(this.size,2));
+        return 6*(Math.pow(this.l,2));
+    }
+    public String toString(){
+        return "---"+getName()+"\nVolume: "+volume()+"\nSurface Area: "+surfaceArea()+"\n";
     }
 }
