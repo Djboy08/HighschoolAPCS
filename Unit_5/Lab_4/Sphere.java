@@ -1,6 +1,6 @@
 package Unit_5.Lab_4;
 
-public class Sphere extends Identity implements Shape {
+public class Sphere extends Identity {
     private double r;
     public Sphere(double r){
         super("Sphere");
@@ -11,8 +11,5 @@ public class Sphere extends Identity implements Shape {
     }
     public double surfaceArea(){
         return 4*(Math.PI*(Math.pow(r,2)));
-    }
-    public String toString(){
-        return "---"+getName()+"\nVolume: "+volume()+"\nSurface Area: "+surfaceArea()+"\n";
     }
 }

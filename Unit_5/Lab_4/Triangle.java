@@ -1,6 +1,6 @@
 package Unit_5.Lab_4;
 
-public class Triangle extends Identity implements Shape {
+public class Triangle extends Identity {
     private double a,b,c,h;
     public Triangle(){
         this(2,2,2,2);
@@ -17,8 +17,5 @@ public class Triangle extends Identity implements Shape {
     }
     public double surfaceArea(){
         return (2*Math.sqrt( (a+b+c)/2*((a+b+c)/2-a)*((a+b+c)/2-b)*((a+b+c)/2-c) )+(a+b+c)*h);
-    }
-    public String toString(){
-        return "---"+getName()+"\nVolume: "+volume()+"\nSurface Area: "+surfaceArea()+"\n";
     }
 }

@@ -1,6 +1,6 @@
 package Unit_5.Lab_4;
 
-public class Cube extends Rectangle implements Shape {
+public class Cube extends Rectangle {
     public Cube(){
         this(2);
     }
@@ -13,8 +13,5 @@ public class Cube extends Rectangle implements Shape {
     }
     public double surfaceArea(){
         return 6*(Math.pow(this.l,2));
-    }
-    public String toString(){
-        return "---"+getName()+"\nVolume: "+volume()+"\nSurface Area: "+surfaceArea()+"\n";
     }
 }

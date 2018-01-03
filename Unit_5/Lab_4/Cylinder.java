@@ -1,6 +1,6 @@
 package Unit_5.Lab_4;
 
-public class Cylinder extends Identity implements Shape {
+public class Cylinder extends Identity {
     private double r,h;
     public Cylinder(){
         this(2,2);
@@ -15,8 +15,5 @@ public class Cylinder extends Identity implements Shape {
     }
     public double surfaceArea(){
         return (2*Math.PI*r*h)+(2*Math.PI*(r*r));
-    }
-    public String toString(){
-        return "---"+getName()+"\nVolume: "+volume()+"\nSurface Area: "+surfaceArea()+"\n";
     }
 }
