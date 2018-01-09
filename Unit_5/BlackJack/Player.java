@@ -12,6 +12,9 @@ public class Player {
     public ArrayList<Card> getCards(){
         return cards;
     }
+    public void reset(){
+        cards.clear();
+    }
     public void stand(){
         //Stop turn
     }
