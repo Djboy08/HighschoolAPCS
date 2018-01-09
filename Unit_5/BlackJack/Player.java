@@ -5,7 +5,7 @@ public class Player {
     ArrayList<Card> cards = new ArrayList<>();
     Scanner input = new Scanner(System.in);
     private double cash = 500;
-    private int HitOrStanding = 3; // 1 = hit, 2 = stand, 3 = round just start
+    private int HitOrStanding = 1; // 1 = hit, 2 = stand, 3 = round just start
     public void giveCard(Card c){
         cards.add(c);
     }
@@ -16,8 +16,10 @@ public class Player {
         //Stop turn
     }
     public int response(){
-        System.out.println("Please press 1 to hit, or 2 to stand");
-        return input.nextInt();
+        System.out.println("\nPlease press 1 to hit, or 2 to stand");
+        int in = input.nextInt();
+        this.setHitOrStanding(in);
+        return in;
     }
     public int getHitOrStanding(){
         return this.HitOrStanding;
@@ -58,6 +60,15 @@ public class Player {
         }else{
             return false;
         }
+    }
 
+    public String toString(){
+        String ret = "Player Has:\n";
+        ArrayList<Card> cards = this.getCards();
+        ret+=cards.get(0);
+        for (int i = 1; i <= cards.size() - 1; i++) {
+            ret+=", " + cards.get(i);
+        }
+        return ret;
     }
 }

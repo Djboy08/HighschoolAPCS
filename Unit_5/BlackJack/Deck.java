@@ -22,9 +22,8 @@ public class Deck {
         shuffle();
     }
     public Card getRandomCard(){
-        int location = (int)(Math.ceil(Math.random()*deck.size())-1);
-        Card card = deck.get(location);
-        deck.remove(location);
+        Card card = deck.get(0);
+        deck.remove(0);
         return card;
     }
     public void shuffle(){
