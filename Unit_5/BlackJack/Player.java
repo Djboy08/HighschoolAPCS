@@ -46,7 +46,7 @@ public class Player {
         return r;
     }
     private int totalSum(int[] p){
-        return p[0] == p[1] ? p[0] : ( (p[0] > p[1] && p[0] <=21) ? p[0] : ( (p[0] < p[1] && p[1] <= 21 ? p[1] : -5) ));
+        return p[0] == p[1] ? p[0] : ( (p[0] > p[1]) ? p[0] : ( (p[0] < p[1] ? p[1] : -5) ));
     }
     public int highestScore(){
         return totalSum(getTotalScore());
@@ -56,9 +56,15 @@ public class Player {
         int[] p = this.getTotalScore(),d = o.getTotalScore();
         totalPlayer = totalSum(p);
         totalDealer = totalSum(d);
+        System.out.print(totalPlayer+" - ");
+        System.out.print(totalDealer+"\n");
         if(totalPlayer == totalDealer){
             return false;
-        }else if(totalPlayer > totalDealer){
+        }else if(totalPlayer > totalDealer && totalPlayer <= 21){
+            return true;
+        }else if(totalPlayer > 21 && totalDealer > 21){
+            return false;
+        }else if(totalPlayer <= 21 && totalDealer > 21){
             return true;
         }else{
             return false;
@@ -68,7 +74,7 @@ public class Player {
     public String toString(){
         String ret = "Player Has:\n";
         ArrayList<Card> cards = this.getCards();
-        ret+=cards.get(0);
+        ret+="Hidden Card";
         for (int i = 1; i <= cards.size() - 1; i++) {
             ret+=", " + cards.get(i);
         }

@@ -41,8 +41,9 @@ public class Game {
                 if(dealer.getHitOrStanding() == 1){
                     dealer.giveCard(deck.getRandomCard());
                 }
+                System.out.println(player.highestScore()+"("+player.isWinning(dealer)+") VS "+dealer.highestScore()+"("+dealer.isWinning(player)+")");
                 if(player.getHitOrStanding() == 2 && dealer.getHitOrStanding() == 2) {
-                    if (player.isWinning(dealer) && dealer.isWinning(player)) {
+                    if (player.isWinning(dealer) == dealer.isWinning(player)) {
                         System.out.println("TIE AKA PUSH!");
                     } else if (player.isWinning(dealer)) {
                         System.out.println("Player won!");
