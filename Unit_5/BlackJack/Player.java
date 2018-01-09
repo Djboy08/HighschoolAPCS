@@ -6,15 +6,19 @@ public class Player {
     private Scanner input = new Scanner(System.in);
     private double cash = 500;
     private int HitOrStanding = 1; // 1 = hit, 2 = stand, 3 = round just start
+
     public void giveCard(Card c){
         cards.add(c);
     }
+
     public ArrayList<Card> getCards(){
         return cards;
     }
+
     public void reset(){
         cards.clear();
     }
+
     public void stand(){
         //Stop turn
     }
@@ -38,26 +42,44 @@ public class Player {
     }
     public int[] getTotalScore(){
         int sum = 0,sum2 = 0;
+        int baseCards = 0;
+        int Aces = 0;
         for(int i=0;i<=cards.size()-1;i++){
-            sum = sum + cards.get(i).getNumber()[0];
-            sum2 = cards.get(i).getNumber()[0] == 1 ? sum2 + 11 : sum2 + cards.get(i).getNumber()[0];
+            if(cards.get(i).getNumber()[0] != 1){
+                baseCards = baseCards + cards.get(i).getNumber()[0];
+            }else{
+                Aces++;
+            }
         }
+        int AcesSum = Aces;
+        sum2 = baseCards;
+        for(int i = 1; i <= Aces; ++i) {
+            if (AcesSum + baseCards <= 21 && AcesSum + baseCards > baseCards) {
+                sum2 = AcesSum + baseCards;
+            }
+            if(Aces == 1 && 11+baseCards <= 21 && 11 + baseCards > baseCards){
+                sum2 = 11+baseCards;
+            }
+
+            AcesSum = i * 11 + (Aces - i);
+        }
+
         int[] r = {sum,sum2};
         return r;
     }
     private int totalSum(int[] p){
         return p[0] == p[1] ? p[0] : ( (p[0] > p[1]) ? p[0] : ( (p[0] < p[1] ? p[1] : -5) ));
     }
+
     public int highestScore(){
         return totalSum(getTotalScore());
     }
+
     public boolean isWinning(Player o){
         int totalPlayer = 0, totalDealer = 0;
         int[] p = this.getTotalScore(),d = o.getTotalScore();
         totalPlayer = totalSum(p);
         totalDealer = totalSum(d);
-        System.out.print(totalPlayer+" - ");
-        System.out.print(totalDealer+"\n");
         if(totalPlayer == totalDealer){
             return false;
         }else if(totalPlayer > totalDealer && totalPlayer <= 21){
@@ -74,7 +96,7 @@ public class Player {
     public String toString(){
         String ret = "Player Has:\n";
         ArrayList<Card> cards = this.getCards();
-        ret+="Hidden Card";
+        ret+=cards.get(0);
         for (int i = 1; i <= cards.size() - 1; i++) {
             ret+=", " + cards.get(i);
         }

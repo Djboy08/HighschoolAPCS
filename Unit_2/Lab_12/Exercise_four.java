@@ -40,10 +40,10 @@ public class Exercise_four{
             }
         };
         if(Player1>100){
-            System.out.print("Player 1 wins!");
+            System.out.print("Player.java 1 wins!");
             return;
         }
-        System.out.print("Player 2 wins!");
+        System.out.print("Player.java 2 wins!");
     }
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);

@@ -49,7 +49,7 @@ public class Lab{
         }else{
             game1stats+=5;
         }
-        System.out.println("Player 1 has a win % of "+game1stats+" and Player 2 has a win % of "+game2stats);
+        System.out.println("Player.java 1 has a win % of "+game1stats+" and Player.java 2 has a win % of "+game2stats);
     }
     public static String Begin(Scanner input){
         System.out.print("Choose a number,\nRock=1\nPaper=2\nScissors=3\nOr use 4 to end the game");
@@ -60,13 +60,13 @@ public class Lab{
             Response = RequestValidation(input);
             if(Response != 4){
                 Computer = generateComputer();            
-                System.out.println("Player picked "+getChoice(Response)+" and Computer picked "+getChoice(Computer));
+                System.out.println("Player.java picked "+getChoice(Response)+" and Computer picked "+getChoice(Computer));
                 if(Response == 1 && Computer == 3){
-                    System.out.println("Player wins!");
+                    System.out.println("Player.java wins!");
                 }else if(Response == 2 && Computer == 1){
-                    System.out.println("Player wins!");
+                    System.out.println("Player.java wins!");
                 }else if(Response == 3 && Computer == 2){
-                    System.out.println("Player wins!");
+                    System.out.println("Player.java wins!");
                 }else if(Response == Computer){
                     System.out.println("Its a tie!");
                 }else{
