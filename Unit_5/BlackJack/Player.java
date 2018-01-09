@@ -2,8 +2,8 @@ package Unit_5.BlackJack;
 
 import java.util.*;
 public class Player {
-    ArrayList<Card> cards = new ArrayList<>();
-    Scanner input = new Scanner(System.in);
+    private ArrayList<Card> cards = new ArrayList<>();
+    private Scanner input = new Scanner(System.in);
     private double cash = 500;
     private int HitOrStanding = 1; // 1 = hit, 2 = stand, 3 = round just start
     public void giveCard(Card c){
