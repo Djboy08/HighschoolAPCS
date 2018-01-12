@@ -7,7 +7,7 @@ public class SpreadsheetLocation implements Location {
     private String s = "";
     public int getRow(){
         // TODO Auto-generated method stub
-        return Integer.parseInt(s.substring(1));
+        return Integer.parseInt(s.substring(1))-1;
     }
 
     public int getCol(){
@@ -16,7 +16,7 @@ public class SpreadsheetLocation implements Location {
         String temp = s.substring(0,1);
         for(int i = 0;i<=alpha.length-1;i++){
             if(temp.equalsIgnoreCase(alpha[i])){
-                return i+1;
+                return i;
             }
         }
         return 0;
