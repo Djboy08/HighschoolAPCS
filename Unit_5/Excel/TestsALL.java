@@ -134,7 +134,7 @@ public class TestsALL
             String str = grid.processCommand("");
             assertEquals("output from empty command", "", str);
         }
-
+//
         @Test
         public void testLongShortStringCell()
         {
