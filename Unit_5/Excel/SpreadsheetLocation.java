@@ -6,7 +6,7 @@ package Unit_5.Excel;
 public class SpreadsheetLocation implements Location {
     private String s = "";
     public int getRow(){
-        // TODO Auto-generated method stub
+        // TODO Auto-generated method  stub
         return Integer.parseInt(s.substring(1))-1;
     }
 
