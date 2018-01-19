@@ -1,3 +1,4 @@
+package Unit_5.Lab_1;
 public class AdvancedStudentTicket extends AdvancedTicket{
     private int ID;
     public AdvancedStudentTicket(int n, int days){

@@ -1,3 +1,4 @@
+package Unit_5.Lab_1;
 public class Ticket {
     private int number;
     private double price;
