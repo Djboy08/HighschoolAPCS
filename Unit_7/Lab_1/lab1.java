@@ -38,6 +38,15 @@ class test {
         }
     }
     public static int fibo(int n){
-
+        if(n == 0){
+            return 0;
+        }else if(n == 1){
+            return 1;
+        }else{
+            int fibo1 = fibo(n-2);
+            int fibo2 = fibo(n-1);
+            return fibo1+fibo2;
+        }
     }
+
 }
