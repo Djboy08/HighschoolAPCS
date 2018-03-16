@@ -31,44 +31,44 @@ public class lab1 {
 
 class Test {
     public static void countUp(int k, int n){
-        if(k >= n){
-            System.out.print(n);
+        if(k >= n){ // checks to make sure k is not greater than n
+            System.out.print(n); //Just prints the last number
         }else{
-            System.out.print(k+" ");
-            countUp(++k,n);
+            System.out.print(k+" "); //prints k
+            countUp(++k,n); // Increases k.
         }
     }
     public static void countDown(int k, int n) {
-        if(n <= k){
+        if(n <= k){ // makes sure n is not less than k
             System.out.print(k);
         }else{
             System.out.print(n+" ");
-            countDown(k,--n);
+            countDown(k,--n);//Subtract 1 from n
         }
     }
     public static int sum(int n){
         if(n == 0){
-            return 0;
+            return 0; // since we are adding we want to return 0 so that it wont affect the outcome
         }else{
-            return n + sum(n-1);
+            return n + sum(n-1); // we add n with its previous number plus 1
         }
     }
     public static int fact(int n){
         if(n == 0){
-            return 1;
+            return 1; // returns 1 so when it is later multiplyed by the number it does not affect it
         }else{
-            return n * fact(n-1);
+            return n * fact(n-1); // does the same thing as sum except it is multiplying
         }
     }
     public static int fibo(int n){
         if(n == 0){
-            return 0;
+            return 0; // returns 0 because the 0th place in fib is 0
         }else if(n == 1){
-            return 1;
+            return 1; // returns 1 because the 1st place in fib is 1
         }else{
-            int fibo1 = fibo(n-2);
+            int fibo1 = fibo(n-2); // adds the previous two numbers
             int fibo2 = fibo(n-1);
-            return fibo1+fibo2;
+            return fibo1+fibo2; // and returns it causing the method to go all the way to the start and work its way back.
         }
     }
     public static int gcf(int n1, int n2){
@@ -76,13 +76,16 @@ class Test {
             return n1;
         }else{
             return gcf(n2,n1%n2);
+            //This statement will keep switching n1 and n2 while also making n2 the remainder because if n2 is 0 that
+            //would mean that n1 is the number that goes into both of them evenly.
         }
     }
     public static int pow(int n1, int n2){
         if(n2 == 0){
             return 1;
         }else{
-            return n1*pow(n1,--n2);
+            return n1*pow(n1,--n2);//This method is similar to factorial except instead of changing n1 we just change
+            //n2.
         }
     }
 }
