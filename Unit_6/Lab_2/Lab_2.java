@@ -7,6 +7,7 @@ import java.io.*;
 import java.util.*;
 import java.text.DecimalFormat;
 
+
 public class Lab_2
 {
     public static void main(String args[]) throws IOException
@@ -28,18 +29,18 @@ public class Lab_2
         studentArray.display("STUDENTS SORTED IN ASCENDING ORDER BY ID#");
         studentArray.pause();
 
-//		int studentID = getID();
-//		int index = studentArray.search(studentID);
-//
-//		if (index == -1)
-//		    System.out.println("There is no student with an ID# of "+studentID+".\n");
-//		else
-//		{
-//			studentArray.displayStudent(index);   // displays the information for the found student
-//			studentArray.delete(index);           // remove the same student from the array
-//			studentArray.display("STUDENTS SORTED IN ASCENDING ORDER BY ID# WITHOUT STUDENT# "+studentID);
-//			studentArray.pause();
-//		}
+		int studentID = getID();
+		int index = studentArray.search(studentID);
+
+		if (index == -1)
+		    System.out.println("There is no student with an ID# of "+studentID+".\n");
+		else
+		{
+			studentArray.displayStudent(index);   // displays the information for the found student
+			studentArray.delete(index);           // remove the same student from the array
+			studentArray.display("STUDENTS SORTED IN ASCENDING ORDER BY ID# WITHOUT STUDENT# "+studentID);
+			studentArray.pause();
+		}
     }
 
     public static int getID()
@@ -104,7 +105,14 @@ class List
         inStream.close();
         size = index;
     }
-
+    public int search(int ID){
+        for(int i=0;i<size;i++){
+            if(student[i].id == ID) {
+                return i;
+            }
+        }
+        return -1;
+    }
     private String spaces(String name)
     {
         int tab = 24 - name.length();
@@ -134,9 +142,15 @@ class List
         dummy = input.nextLine();
     }
 
-    public void displayStudent(int index)
+    public void displayStudent(int k)
     {
+        DecimalFormat output = new DecimalFormat("0.000");
+        System.out.println("\nDISPLAYING STUDENT");
+        System.out.println("\nStudent ID#     Student Name            Age         GPA");
+        System.out.println("============================================================");
 
+            System.out.println(student[k].id + "          "+student[k].name + spaces(student[k].name) +
+                    student[k].age + "          " + output.format(student[k].gpa));
     }
 
     private void swap(int x, int y)
@@ -168,8 +182,16 @@ class List
         // Precondition:  "index" stores the index of a student object that exists in the "student" array.
         // Postcondition: The student object at index "index" is removed from the "student" array.
         //                All other objects in the "student" array are unaffected.
-
-
+        Person[] tempStudent = new Person[size-1];
+        int t = 0;
+        for(int i=0;i<student.length;i++){
+            if(i != index){
+                tempStudent[t] = student[i];
+                t++;
+            }
+        }
+        student = tempStudent;
+        size = size-1;
 
     }
 }
