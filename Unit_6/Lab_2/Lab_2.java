@@ -12,7 +12,7 @@ public class Lab_2
 {
     public static void main(String args[]) throws IOException
     {
-        List studentArray = new List(4);
+        List studentArray = new List(33);
         studentArray.getList();
         studentArray.display("UNSORTED LIST OF STUDENTS");
         studentArray.pause();
