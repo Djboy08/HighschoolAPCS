@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.*;
 import java.text.DecimalFormat;
 
-
+//test
 public class Lab_2
 {
     public static void main(String args[]) throws IOException
