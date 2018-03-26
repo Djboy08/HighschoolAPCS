@@ -1,4 +1,3 @@
-package Unit_6.Lab_2;
 // TextLab11st.java
 // The Student Records Algorithm Program
 // This is the student, starting version of the TextLab11 assignment.
@@ -83,7 +82,7 @@ class List
     }
 
     public void getList() throws IOException{
-        FileReader inFile = new FileReader("Unit_6/Lab_2/students2.dat");
+        FileReader inFile = new FileReader("students2.dat");
         BufferedReader inStream = new BufferedReader(inFile);
         String s1,s2,s3,s4;
         int age, id;
@@ -105,13 +104,22 @@ class List
         inStream.close();
         size = index;
     }
-    public int search(int ID){
-        for(int i=0;i<size;i++){
-            if(student[i].id == ID) {
-                return i;
-            }
-        }
-        return -1;
+    public int search(int studentID){
+		int max = student.length-1;
+		int min = 0;
+		while(min <= max){
+			int mid = (max + min)/2; 
+			if(student[mid].id == studentID)
+			{
+				return mid;
+			}else if(student[mid].id > studentID){
+				max = mid - 1; 
+			}else{
+				min = mid + 1; 
+			}
+			mid = (max + min) / 2; 
+		}
+	return -1;
     }
     private String spaces(String name)
     {
@@ -159,70 +167,63 @@ class List
     }
 
     public void gpaSort(){
-        Arrays.sort(student,new gpaCompar());
+        Arrays.sort(student,new gpaCompar());  //sorts with gpa
     }
 
     public void ageSort()
     {
-        Arrays.sort(student,new ageCompar());
+        Arrays.sort(student,new ageCompar()); // sorts with age
     }
 
     public void idSort()
     {
-        Arrays.sort(student,new idCompar());
+        Arrays.sort(student,new idCompar()); // sorts with IDs
     }
 
-//	public int search(int studentID)
-//	{
-
-//	}
 
     public void delete(int index)
     {
-        // Precondition:  "index" stores the index of a student object that exists in the "student" array.
-        // Postcondition: The student object at index "index" is removed from the "student" array.
-        //                All other objects in the "student" array are unaffected.
         Person[] tempStudent = new Person[size-1];
         int t = 0;
         for(int i=0;i<student.length;i++){
             if(i != index){
-                tempStudent[t] = student[i];
+                tempStudent[t] = student[i];  //adds everything to the new array except the one with that index value
                 t++;
             }
         }
-        student = tempStudent;
-        size = size-1;
+        student = tempStudent; //changes that array to the new array
+        size = size-1; // subtracts one so we know the array length.
 
     }
 }
-class gpaCompar implements Comparator<Person>{
+class gpaCompar implements Comparator<Person>{ //GPA (descending)
     public int compare(Person s1, Person s2){
         if(s1.gpa > s2.gpa){
-            return -1;
+            return -1; //puts first person first if there gpa is larger.
         }else if(s1.gpa < s2.gpa){
-            return 1;
+            return 1; // if the first person gpa is less than the second. put them after.
         }
-        return 0;
+        return 0; // do nothing
     }
 }
-class ageCompar implements Comparator<Person>{
+class ageCompar implements Comparator<Person>{ //Age (ascending)
     public int compare(Person s1, Person s2){
         if(s1.age < s2.age){
-            return -1;
+            return -1; //if the first person age is less than the second. Put them first
         }else if(s1.age > s2.age){
-            return 1;
+            return 1;  // or put them last
         }
-        return 0;
+        return 0; // do nothing
     }
 }
-class idCompar implements Comparator<Person>{
+class idCompar implements Comparator<Person>{ // ID# (ascending).
     public int compare(Person s1, Person s2){
         if(s1.id < s2.id){
-            return -1;
+            return -1; // if the first person id is less than the first put them first
         }else if(s1.id > s2.id){
-            return 1;
+            return 1; // or put them last
         }
-        return 0;
+        return 0; // do nothing
     }
 }
 
