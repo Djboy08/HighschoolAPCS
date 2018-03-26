@@ -1,4 +1,3 @@
-package Unit_6.Lab_1;
 import java.util.*;
 public class Lab_1 {
     public static void main(String[] args){
@@ -42,14 +41,19 @@ class Array {
         System.out.println("\n" + listName + ":\n");
         System.out.println(list + "\n");
     }
-
+    
     public void merge(Array that, Array theOther){
-
-        for(int i=0;i < theOther.size; i++){
-            that.list.add(theOther.list.get(i));
+        int leftI = 0;
+        int rightI = 0;
+        for(int i=0;i < that.size+theOther.size; i++){
+            if(rightI >= theOther.size || (leftI < that.size && that.list.get(leftI) <= theOther.list.get(rightI)) ){
+                this.list.add(that.list.get(leftI));
+                leftI++;
+            }else{
+                this.list.add(theOther.list.get(rightI));
+                rightI++;
+            }
         }
-        Collections.sort(that.list);
-        this.list = that.list;
-    }
+    }    
 
 }
